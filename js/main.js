@@ -143,9 +143,9 @@ function menu() {
         "5. Salir"
     ];
 
-    for (let i = 0; i < options.length; i++) {
-        console.log(options[i]);
-    }
+    options.forEach((opcion) => {
+        console.log(opcion);
+    });
 }
 
 
@@ -231,6 +231,32 @@ menu();
 elegir();
 // Pregunta por la primera opción
 opciones();
+
+
+// Array de objetos de dietas disponibles en la tienda
+
+const DIETAS = [
+    {nombre: "Dieta vegetariana", precio: 4000},
+    {nombre: "Dieta vegana", precio: 4000},
+    {nombre: "Dieta comun", precio: 4000},
+    {nombre: "Dieta + nutri personal 24/7", precio: 100000},
+    {nombre: "Dieta + nutri personal 24/7 + plan de entrenamiento", precio: 150000}
+]
+
+// Recorrer el Array 
+
+DIETAS.forEach ( (dieta) => {console.log(dieta)})
+
+// Recorrer el Array y retornar uno nuevo con precios actualizados
+
+const nuevosPrecios = DIETAS.map((dieta) => {
+    return{
+        nombre: dieta.nombre,
+        precio: dieta.precio * 1.2
+    }
+})
+
+console.log(nuevosPrecios); 
 
 
 
